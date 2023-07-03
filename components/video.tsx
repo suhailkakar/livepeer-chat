@@ -112,14 +112,16 @@ const Video: React.FC<VideoProps> = ({ onMeetingInfo }) => {
 
   useEffect(() => {
     if (selectedSpeakerDevice) {
+      //@ts-ignore
       const audioOutput = videoRef.current?.sinkId;
       if (audioOutput && "setSinkId" in videoRef.current) {
+        //@ts-ignore
         videoRef.current
           .setSinkId(selectedSpeakerDevice)
           .then(() => {
             console.log("Speaker set successfully");
           })
-          .catch((error) => {
+          .catch((error: any) => {
             console.error("Error setting speaker:", error);
           });
       }
