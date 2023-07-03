@@ -1,4 +1,3 @@
-import Home from "@/assets/icons/home";
 import React from "react";
 
 interface SelectProps {
